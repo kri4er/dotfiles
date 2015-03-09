@@ -5,7 +5,6 @@
 !README.md
 !.gitignore
 !.tmux.conf
-!.tmux-powerlinerc
 !.vimrc
 
 #... even if they are in subdirectories
