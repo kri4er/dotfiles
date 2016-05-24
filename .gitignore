@@ -6,6 +6,11 @@
 !.gitignore
 !.tmux.conf
 !.vimrc
+!.zshenv
+!.zshrc
+!.zshrc_basic
+!tmux-powerline
+!tmux-powerline/*
 
 #... even if they are in subdirectories
 #!*/
