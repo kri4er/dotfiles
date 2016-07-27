@@ -18,6 +18,8 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'crucerucalin/qml.vim'
 " is not used now, check if it still required
 Plugin 'Lokaltog/vim-easymotion'
+" best ever vim git plugin
+Plugin 'tpope/vim-fugitive'
 
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'bling/vim-airline'
@@ -102,11 +104,11 @@ highlight ColorComumn ctermbg=darkgray
 set guifont=*
 "set guifont=Monospace:h9
 
-let g:ctrlk_clang_library_path="/home/bbl-pc-114/.vim/bundle/YouCompleteMe/third_party/ycmd/"
-nmap <F3> :call GetCtrlKState()<CR>
-nmap <C-k> :call CtrlKNavigateSymbols()<CR>
-nmap <F2> :call CtrlKGoToDefinition()<CR>
-nmap <F12> :call CtrlKGetReferences()<CR>
+"let g:ctrlk_clang_library_path="/home/ydederkal/.vim/bundle/YouCompleteMe/third_party/ycmd/"
+"nmap <F3> :call GetCtrlKState()<CR>
+"nmap <C-k> :call CtrlKNavigateSymbols()<CR>
+"nmap <F2> :call CtrlKGoToDefinition()<CR>
+"nmap <F12> :call CtrlKGetReferences()<CR>
 
 "show whitespace and tabs
 set list
@@ -164,7 +166,9 @@ let g:EasyMotion_do_mapping = 0 "Disable default mappings
 
 " ****** Ctags setup ****************
 map <F4> [I:let nr = input("Which one: ")<Bar>exe "normal " . nr ."[\t"<CR>
-" ****** Ctags setup *****************
+
+" ****** Header <---> Source file switcher *****************
+map <F3> :e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>
 
 " ****** map NERDTree open****
 "nnoremap <F5> :NERDTreeToggle<CR>
@@ -203,13 +207,16 @@ set wildcharm=<C-Z>
 " custom key combination:
 let g:ctrlp_map = '<c-p>'
 " custom command combination:
-let g:ctrlp_cmd = 'CtrlP /home/bbl-pc-114/ntg6master'
+let g:ctrlp_cmd = 'CtrlP /home/ydederkal/ntg6master'
 
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_max_depth = 50
-let g:ctrlp_cache_dir = '/home/bbl-pc-114/.cache/ctrlp'
+let g:ctrlp_cache_dir = '/home/ydederkal/.cache/ctrlp'
 let g:ctrlp_show_hidden = 0
 let g:ctrlp_max_files=0
+" set ctrlp to ignore files.
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 
 map <C-b> :CtrlPBuffer<CR>
 " ***** ** *** ***
